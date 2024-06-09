@@ -12,7 +12,7 @@ RUN true && \
     rm -rf google-chrome-stable_current_amd64.deb && \
     cd /usr/local/lib/python3.10/site-packages/DrissionPage/_configs/ && \
     sed -i "/browser_path/s/$(grep 'browser_path' 'configs.ini' | awk -F '=' '{print $2}')/\/usr\/bin\/google-chrome/" configs.ini && \
-    sed -i "/arguments/s/\[/\[\'--no-sandbox\', \'--headless=new\', \'--incognito\', /" configs.ini
+    sed -i "/arguments/s/\[/\[\'--no-sandbox\', \'--headless=new\', /" configs.ini
 
 WORKDIR /app
 CMD ["python"]
